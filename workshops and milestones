@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | ROBU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="p-8 md:p-24">
+    <div class="max-w-4xl mx-auto">
+        <a href="index.html" class="text-blue-400 hover:text-blue-300 mb-8 inline-block">&larr; Back Home</a>
+        
+        <!-- Section Menu Selection -->
+        <div class="flex gap-4 mb-12 border-b border-slate-700 pb-4">
+            <button onclick="showSection('workshops')" class="text-2xl font-bold text-white hover:text-blue-400 transition" id="btn-workshops">Workshops</button>
+            <span class="text-2xl text-slate-600">|</span>
+            <button onclick="showSection('milestones')" class="text-2xl font-bold text-slate-500 hover:text-blue-400 transition" id="btn-milestones">Milestones</button>
+        </div>
+
+        <!-- Workshops Section (Accordion Drop-downs) -->
+        <div id="workshops-section" class="space-y-4">
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none">Path to Automation (LFR Workshop)</summary>
+                <div class="mt-4 text-slate-400 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Organized by the Arts & Design Department in February 2025, this hands-on workshop equips students with the technical skills to build and program smart Line-Following Robots.
+                </div>
+            </details>
+
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none">Embedded Hardware and Firmware Engineering</summary>
+                <div class="mt-4 text-slate-400 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    An intensive program providing hands-on experience in industrial Embedded Systems, exploring STM32 microcontrollers and the complete hardware development lifecycle.
+                </div>
+            </details>
+        </div>
+
+        <!-- Milestones Section (Accordion Drop-downs) -->
+        <div id="milestones-section" class="space-y-4 hidden">
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none">BRACU Mongol-Tori (URC 2026)</summary>
+                <div class="mt-4 text-slate-400 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Achieved 7th place globally at the University Rover Challenge (URC) 2026, utilizing advanced ROS2 autonomy and a custom 7-DOF robotic arm for Mars analogs.
+                </div>
+            </details>
+
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none">Team Automorph (WICO 2026)</summary>
+                <div class="mt-4 text-slate-400 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Secured Gold Medal and the prestigious Award of Excellence at the World Invention Creativity Olympic in Seoul, South Korea, placing in the top 1% out of 400 teams.
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- Simple JS for Menu Toggling -->
+    <script>
+        function showSection(section) {
+            document.getElementById('workshops-section').classList.add('hidden');
+            document.getElementById('milestones-section').classList.add('hidden');
+            
+            document.getElementById('btn-workshops').classList.replace('text-white', 'text-slate-500');
+            document.getElementById('btn-milestones').classList.replace('text-white', 'text-slate-500');
+            
+            document.getElementById(section + '-section').classList.remove('hidden');
+            document.getElementById('btn-' + section).classList.replace('text-slate-500', 'text-white');
+        }
+    </script>
+</body>
+</html>
