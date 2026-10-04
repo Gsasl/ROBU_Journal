@@ -1,13 +1,12 @@
 /* Snappy dark theme base overrides */
 body {
-    background-color: #0f172a; /* Tailwind slate-900 */
-    color: #f8fafc; /* Tailwind slate-50 */
+    background-color: #0f172a; 
+    color: #f8fafc; 
 }
 
-/* Fading background photo for Landing Page */
+/* Fading background photo for Landing Page - Path updated to match GitHub */
 .hero-bg {
-    position: relative;
-    background-image: url('../ROBU_Photos/group_photo.jpg'); /* Replace with actual group photo */
+    background-image: url('ROBU_group_photo.jpg'); 
     background-size: cover;
     background-position: center;
 }
