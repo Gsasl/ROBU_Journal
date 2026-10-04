@@ -4,87 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROBU | Robotics Club of BRAC University</title>
-    <!-- Tailwind CSS for rapid styling without a build step -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        robuBlue: '#1a56db', /* Recommended styling: Matches the blue from the ROBU logo */
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Link to separate custom CSS for overriding styles if needed -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans scroll-smooth">
+<body class="font-sans antialiased">
+    
+    <!-- Hero Section with Fading Background -->
+    <header class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <div class="hero-content max-w-4xl mx-auto flex flex-col items-center">
+            
+            <!-- Club Logo -->
+            <img src="ROBU_Photos/logo.png" alt="ROBU Logo" class="w-32 h-32 mb-8 rounded-full shadow-lg border-2 border-slate-700">
+            
+            <!-- Clear Striking Intro -->
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-white drop-shadow-md">
+                Robotics Club of BRAC University
+            </h1>
+            <p class="text-xl md:text-2xl font-light italic mb-8 text-slate-300">
+                "Small is beautiful, but big is necessary"
+            </p>
+            <p class="text-lg text-slate-400 mb-10 max-w-2xl leading-relaxed">
+                Evolved from a small laboratory into a national launchpad for deep-tech innovation and global engineering competitiveness.
+            </p>
 
-    <!-- HEADER / NAVIGATION (Keep logic simple so IT can edit easily) -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                
-                <!-- Top Left: Club Logo & Name -->
-                <div class="flex-shrink-0 flex items-center gap-3">
-                    <!-- Replace the src with your actual logo file path -->
-                    <img src="assets/image_6b7e48.jpg" alt="ROBU Logo" class="h-10 w-10 object-contain rounded-full border border-gray-200">
-                    <span class="font-bold text-xl tracking-tight text-gray-800">ROBU</span>
-                </div>
-                
-                <!-- Top Right: 3 Action Buttons -->
-                <nav class="hidden md:flex space-x-6 items-center">
-                    <a href="#about" class="text-gray-600 hover:text-robuBlue font-medium transition-colors">About</a>
-                    <a href="#explore" class="text-gray-600 hover:text-robuBlue font-medium transition-colors">Explore</a>
-                    <a href="#join" class="bg-robuBlue text-white px-5 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors shadow-sm">Join Us</a>
-                </nav>
-
+            <!-- Navigation / Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                <a href="departments.html" class="px-8 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 transition">Our Departments</a>
+                <a href="about.html" class="px-8 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 transition">About Us</a>
+                <!-- Join Us opens in a new tab -->
+                <a href="https://docs.google.com/forms/your-form-link" target="_blank" rel="noopener noreferrer" class="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 font-bold shadow-lg transition">Join Us</a>
             </div>
         </div>
     </header>
-
-    <!-- MAIN CONTENT -->
-    <main>
-        
-        <!-- HERO / INTRO SECTION -->
-        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-            
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-                Robotics Club of BRAC University
-            </h1>
-            
-            <!-- Vision Statement derived from the provided document -->
-            <p class="text-xl md:text-2xl text-gray-700 font-light italic mb-8 max-w-3xl mx-auto">
-                "Achieve your imagination through your robot"
-            </p>
-
-            <p class="text-md text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Join a dynamic community of innovators. Start your journey as an Apprentice and build your way up to the Core Panel, developing skills in engineering, design, and leadership.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#explore" class="border border-gray-300 bg-white text-gray-700 px-8 py-3 rounded-md hover:bg-gray-50 font-semibold transition">
-                    View Departments
-                </a>
-                <!-- This button can trigger your Tally embed or link to the form -->
-                <a href="#join" class="bg-robuBlue text-white px-8 py-3 rounded-md hover:bg-blue-700 font-semibold transition shadow-md">
-                    Apply as Apprentice
-                </a>
-            </div>
-        </section>
-
-        <!-- EXPLORE DEPARTMENTS PLACEHOLDER -->
-        <section id="explore" class="bg-gray-100 py-16">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Departments</h2>
-                <p class="text-gray-600">From Strategic Planning to Arts & Design, find your fit.</p>
-                <!-- Add Department Cards Here -->
-            </div>
-        </section>
-
-    </main>
 
 </body>
 </html>
