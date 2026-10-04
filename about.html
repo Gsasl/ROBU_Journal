@@ -13,8 +13,8 @@
                     colors: {
                         robuBlue: '#1a56db',
                         robuBlueLight: '#3b82f6',
-                        robuDark: '#0f172a',
-                        robuSlate: '#1e293b'
+                        robuDark: '#090d16',
+                        robuSlate: '#131b2e'
                     }
                 }
             }
@@ -22,7 +22,10 @@
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-900 text-slate-50 font-sans antialiased min-h-screen flex flex-col justify-between">
+<body class="bg-[#090d16] text-slate-50 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- TOP SCROLL PROGRESS BAR -->
+    <div id="scroll-progress"></div>
 
     <!-- STICKY HEADER / NAVIGATION BAR -->
     <header class="sticky top-0 z-50 nav-glass">
@@ -31,15 +34,15 @@
                 <!-- Top Left: Club Logo & Name -->
                 <a href="index.html" class="flex items-center gap-3 group">
                     <img src="ROBU_logo.jpg" alt="ROBU Logo" class="h-10 w-10 object-cover rounded-full border border-blue-500/40 group-hover:scale-105 transition-transform bg-white">
-                    <span class="font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">ROBU</span>
+                    <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">ROBU</span>
                 </a>
 
                 <!-- Top Right: Navigation Buttons -->
                 <nav class="flex items-center gap-4 sm:gap-6">
-                    <a href="index.html" class="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors">&larr; Home</a>
-                    <a href="departments.html" class="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors">Departments</a>
+                    <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition-colors">&larr; Home</a>
+                    <a href="departments.html" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition-colors">Departments</a>
                     <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" 
-                       class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-md transition">
+                       class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow-md pulse-glow transition">
                         Join Us
                     </a>
                 </nav>
@@ -50,7 +53,7 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <!-- Back Link & Title -->
-        <a href="index.html" class="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-1.5 mb-6 transition">
+        <a href="index.html" class="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1.5 mb-6 transition">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
             <span>Back to Home</span>
         </a>
@@ -59,29 +62,38 @@
         <p class="text-slate-400 text-lg mb-8">Discover our hands-on technical workshops, global competition milestones, and recruitment progression track.</p>
 
         <!-- SECTION TABS MENU -->
-        <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-10 border-b border-slate-800 pb-4">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-8 border-b border-slate-800 pb-4">
             <button onclick="showSection('workshops')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-slate-800 border border-slate-700 shadow-sm" 
+                    class="text-xl sm:text-2xl font-bold px-4 py-2.5 rounded-xl transition text-white bg-slate-800 border border-slate-700/80 shadow-md" 
                     id="btn-workshops">
                 Workshops
             </button>
             <span class="text-2xl text-slate-700 hidden sm:inline">|</span>
             <button onclick="showSection('milestones')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-slate-400 hover:text-white hover:bg-slate-800/60" 
+                    class="text-xl sm:text-2xl font-bold px-4 py-2.5 rounded-xl transition text-slate-400 hover:text-white hover:bg-slate-800/60" 
                     id="btn-milestones">
                 Milestones
             </button>
             <span class="text-2xl text-slate-700 hidden sm:inline">|</span>
             <button onclick="showSection('career')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-slate-400 hover:text-white hover:bg-slate-800/60" 
+                    class="text-xl sm:text-2xl font-bold px-4 py-2.5 rounded-xl transition text-slate-400 hover:text-white hover:bg-slate-800/60" 
                     id="btn-career">
                 Career Track
             </button>
         </div>
 
+        <!-- SEARCH FILTER BAR FOR WORKSHOPS & MILESTONES -->
+        <div class="relative mb-8" id="about-search-container">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <input type="text" id="about-search" placeholder="Search workshops & achievements (e.g. URC, Duburi, STM32, LFR, WICO, LaTeX)..." 
+                   class="w-full pl-11 pr-4 py-3 bg-slate-900/90 border border-slate-700/80 rounded-2xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition shadow-inner">
+        </div>
+
         <!-- WORKSHOPS SECTION (DROP-DOWN STYLE ACCORDIONS) -->
         <div id="workshops-section" class="space-y-4">
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="path automation lfr line follower robot sensor pid motor driver">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm font-bold">01</span>
@@ -94,7 +106,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="soccer bot mechanical chassis bluetooth rf 1v1 tournament">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm font-bold">02</span>
@@ -107,7 +119,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="latex overleaf IEEE paper resume citation bibtex thesis">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm font-bold">03</span>
@@ -120,7 +132,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="github git career version control linkedin resume interview bootcamp">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm font-bold">04</span>
@@ -133,7 +145,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="embedded stm32 arm cortex microcontroller rtos uart spi i2c pcb firmware">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm font-bold">05</span>
@@ -149,7 +161,7 @@
 
         <!-- MILESTONES SECTION (DROP-DOWN STYLE ACCORDIONS) -->
         <div id="milestones-section" class="space-y-4 hidden">
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="mongol tori urc rover Utah 7th global ros2 rtk gnss arm">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-bold">★</span>
@@ -162,7 +174,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="duburi robosub 8th place auv underwater acoustic sonar entrepreneurship award">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-bold">★</span>
@@ -175,7 +187,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="alter dichari erl robocup rescue European robotics league perseverance award">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-bold">★</span>
@@ -188,7 +200,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="automorph wico gold medal seoul korea olympic excellence award">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-bold">★</span>
@@ -201,7 +213,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="world robot games stellar soccer robot Japan Chiba champion">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-bold">★</span>
@@ -214,7 +226,7 @@
                 </div>
             </details>
 
-            <details class="bg-slate-800/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md">
+            <details class="accordion-item bg-[#131b2e]/90 rounded-2xl p-5 border border-slate-700/80 cursor-pointer transition hover:border-slate-600 group shadow-md" data-search="traction national festival robostrikers mechasprint pathfinder aqua wars prompt engineering">
                 <summary class="text-xl font-bold text-white flex items-center justify-between outline-none select-none">
                     <span class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm font-bold">★</span>
@@ -230,7 +242,7 @@
 
         <!-- RECRUITMENT CAREER TRACK SECTION -->
         <div id="career-section" class="space-y-6 hidden">
-            <div class="bg-slate-800/80 p-6 sm:p-8 rounded-2xl border border-slate-700/80 shadow-lg">
+            <div class="bg-[#131b2e]/90 p-6 sm:p-8 rounded-2xl border border-slate-700/80 shadow-lg">
                 <h2 class="text-2xl font-bold text-white mb-3">Corporate-Style Progression Track</h2>
                 <p class="text-slate-300 leading-relaxed mb-8">
                     At ROBU, every new recruit embarks on a structured leadership roadmap. You begin by learning technical & organizational fundamentals and systematically climb to executive panel management.
@@ -239,28 +251,28 @@
                 <div class="relative border-l-2 border-blue-500/40 ml-4 pl-6 space-y-8">
                     <!-- Stage 1 -->
                     <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-slate-900"></div>
+                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-[#090d16]"></div>
                         <h3 class="text-xl font-bold text-blue-400">1. Apprentice (AP)</h3>
                         <p class="text-slate-300 text-sm mt-1">Entry-level recruit stage. Hands-on learning through departmental bootcamps, shadow assignments, and workshop participation.</p>
                     </div>
 
                     <!-- Stage 2 -->
                     <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-slate-900"></div>
+                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-[#090d16]"></div>
                         <h3 class="text-xl font-bold text-indigo-400">2. Executive Body</h3>
                         <p class="text-slate-300 text-sm mt-1">Progression through <strong>Junior Executive &rarr; Executive &rarr; Senior Executive</strong>. Operational ownership over event execution, software tools, design, and budget management.</p>
                     </div>
 
                     <!-- Stage 3 -->
                     <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-purple-500 ring-4 ring-slate-900"></div>
+                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-purple-500 ring-4 ring-[#090d16]"></div>
                         <h3 class="text-xl font-bold text-purple-400">3. Sub-Panel Leadership</h3>
                         <p class="text-slate-300 text-sm mt-1">Roles: <strong>Secretary &rarr; Assistant Director (AD) &rarr; Director</strong>. Strategic leadership over functional departments (SP, F&M, HR, EM, A&D, IT, E&P, RPM).</p>
                     </div>
 
                     <!-- Stage 4 -->
                     <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-400 ring-4 ring-slate-900"></div>
+                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-400 ring-4 ring-[#090d16]"></div>
                         <h3 class="text-xl font-bold text-amber-300">4. Core Panel & Advisory Board</h3>
                         <p class="text-slate-300 text-sm mt-1">Highest executive leadership: <strong>President, Vice President, General Secretary</strong>, guided by the Faculty Advisor. Directing club strategy, global sponsorships, and university relations.</p>
                     </div>
@@ -271,38 +283,72 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-6 text-center text-sm">
+    <footer class="bg-[#060911] border-t border-slate-800 text-slate-400 py-6 text-center text-sm">
         <p>&copy; 2026 ROBU IT Department. All rights reserved.</p>
     </footer>
 
-    <!-- TABS JAVASCRIPT LOGIC -->
+    <!-- TABS & SEARCH JAVASCRIPT LOGIC -->
     <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
         function showSection(section) {
             document.getElementById('workshops-section').classList.add('hidden');
             document.getElementById('milestones-section').classList.add('hidden');
             document.getElementById('career-section').classList.add('hidden');
 
+            const searchContainer = document.getElementById('about-search-container');
+            if (section === 'career') {
+                searchContainer.classList.add('hidden');
+            } else {
+                searchContainer.classList.remove('hidden');
+            }
+
             const btnW = document.getElementById('btn-workshops');
             const btnM = document.getElementById('btn-milestones');
             const btnC = document.getElementById('btn-career');
 
-            // Reset styles
+            // Reset tab styles
             [btnW, btnM, btnC].forEach(b => {
-                b.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-slate-400 hover:text-white hover:bg-slate-800/60";
+                b.className = "text-xl sm:text-2xl font-bold px-4 py-2.5 rounded-xl transition text-slate-400 hover:text-white hover:bg-slate-800/60";
             });
 
-            // Activate chosen tab
+            // Activate target section
             if (section === 'workshops') {
                 document.getElementById('workshops-section').classList.remove('hidden');
-                btnW.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-slate-800 border border-slate-700 shadow-sm";
+                btnW.className = "text-xl sm:text-2xl font-bold px-4 py-2.5 rounded-xl transition text-white bg-slate-800 border border-slate-700/80 shadow-md";
             } else if (section === 'milestones') {
                 document.getElementById('milestones-section').classList.remove('hidden');
-                btnM.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-slate-800 border border-slate-700 shadow-sm";
+                btnM.className = "text-xl sm:text-2xl font-bold px-4 py-2.5 rounded-xl transition text-white bg-slate-800 border border-slate-700/80 shadow-md";
             } else if (section === 'career') {
                 document.getElementById('career-section').classList.remove('hidden');
-                btnC.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-slate-800 border border-slate-700 shadow-sm";
+                btnC.className = "text-xl sm:text-2xl font-bold px-4 py-2.5 rounded-xl transition text-white bg-slate-800 border border-slate-700/80 shadow-md";
             }
         }
+
+        // Instant Filter JS for Workshops & Milestones
+        const aboutSearch = document.getElementById('about-search');
+        const accordions = document.querySelectorAll('.accordion-item');
+
+        aboutSearch.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            accordions.forEach(item => {
+                const text = item.getAttribute('data-search').toLowerCase() + " " + item.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                    if (query.length > 2) {
+                        item.setAttribute('open', 'true');
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
 
         // Support opening career tab via URL query parameter ?tab=career
         const urlParams = new URLSearchParams(window.location.search);
