@@ -1,46 +1,68 @@
-/* ROBU Journal & Recruitment Platform Design System - Premium Elevated Version */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* ROBU Journal Platform - Claude Editorial Aesthetic & Scientific Norms System */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-dark: #090d16;
-  --bg-card: #131b2e;
-  --bg-card-hover: #1e293b;
-  --robu-blue: #1a56db;
-  --robu-blue-light: #3b82f6;
-  --robu-cyan: #06b6d4;
-  --robu-purple: #8b5cf6;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  /* Scientific Warm Neutral Dark Palette (WCAG AAA Contrast > 7:1) */
+  --bg-dark: #121110;
+  --bg-surface: #1a1816;
+  --bg-surface-hover: #24211e;
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-focus: rgba(218, 119, 86, 0.4);
+  
+  /* Claude-inspired Terracotta & Warm Ochre Accents */
+  --accent-warm: #da7756;
+  --accent-warm-hover: #e0886a;
+  --accent-ochre: #d97706;
+  --accent-blue: #3b82f6;
+  
+  /* Scientific Reading Tonal System */
+  --text-primary: #f5f4f0;
+  --text-secondary: #a39e93;
+  --text-muted: #736e65;
+
+  /* Typography Variables */
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
   background-color: var(--bg-dark);
-  color: var(--text-main);
-  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Scroll Progress Bar at Top */
+/* Editorial Serif Typography Utility */
+.font-serif-editorial {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+/* Top Scroll Progress Indicator */
 #scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #1a56db, #3b82f6, #06b6d4, #8b5cf6);
+  height: 2.5px;
+  background: linear-gradient(90deg, #da7756, #d97706, #3b82f6);
   z-index: 9999;
   width: 0%;
   transition: width 0.1s ease-out;
 }
 
-/* Glassmorphism Navigation Header */
+/* Navigation Header */
 .nav-glass {
-  background: rgba(9, 13, 22, 0.85);
+  background: rgba(18, 17, 16, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-/* Hero Section Background & Overlay */
+/* Hero Section Warm Gradient Overlay */
 .hero-bg {
   position: relative;
   background-image: url('ROBU_group_photo.jpg');
@@ -53,7 +75,7 @@ body {
   content: '';
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: radial-gradient(circle at center, rgba(9, 13, 22, 0.70) 0%, rgba(9, 13, 22, 0.92) 75%, rgba(9, 13, 22, 1) 100%);
+  background: radial-gradient(circle at center, rgba(18, 17, 16, 0.75) 0%, rgba(18, 17, 16, 0.94) 75%, rgba(18, 17, 16, 1) 100%);
   z-index: 1;
 }
 
@@ -62,80 +84,57 @@ body {
   z-index: 2;
 }
 
-/* Shimmer Gradient Animated Text */
-.gradient-text-animated {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 25%, #38bdf8 50%, #818cf8 75%, #60a5fa 100%);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shimmer 6s linear infinite;
+/* Minimalist Editorial Card */
+.card-claude {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes shimmer {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+.card-claude:hover {
+  background: var(--bg-surface-hover);
+  border-color: rgba(218, 119, 86, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5);
 }
 
-/* Floating Levitation Effect */
-.animate-float {
-  animation: float 5s ease-in-out infinite;
+/* Minimal Terracotta Accent Badge */
+.badge-claude {
+  background: rgba(218, 119, 86, 0.12);
+  color: #e58b6d;
+  border: 1px solid rgba(218, 119, 86, 0.25);
+  font-family: var(--font-sans);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-
-/* Subtle Pulse for Primary CTA */
-.pulse-glow {
-  animation: pulse-glow-anim 2.5s infinite;
-}
-
-@keyframes pulse-glow-anim {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 45px rgba(6, 182, 212, 0.4);
-  }
+/* Editorial Blockquote Accent */
+.quote-editorial {
+  border-left: 2px solid var(--accent-warm);
+  padding-left: 1.25rem;
+  font-family: var(--font-serif);
+  color: #e2ded4;
 }
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: var(--bg-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #2b2824;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+  background: var(--accent-warm);
 }
 
-/* Interactive Card Elevate & Border Glow */
-.card-elevate {
-  background: rgba(19, 27, 46, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-elevate:hover {
-  transform: translateY(-5px);
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.8), 0 0 25px rgba(59, 130, 246, 0.25);
-}
-
-/* Details Dropdown Animation */
+/* Details Accordion Minimal Override */
 details summary::-webkit-details-marker {
   display: none;
 }
@@ -145,20 +144,20 @@ details[open] summary svg {
 }
 
 details {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease;
 }
 
 details[open] {
-  border-color: rgba(59, 130, 246, 0.4) !important;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.5), 0 0 15px rgba(59, 130, 246, 0.15);
+  border-color: rgba(218, 119, 86, 0.3) !important;
+  background: #1f1d1a !important;
 }
 
-/* Full-Screen Lightbox Modal for Image Viewing */
+/* Full-Screen Lightbox Modal */
 .lightbox-modal {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(9, 13, 22, 0.94);
+  background: rgba(18, 17, 16, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   display: flex;
@@ -167,7 +166,7 @@ details[open] {
   padding: 2rem;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .lightbox-modal.active {
@@ -179,10 +178,10 @@ details[open] {
   max-width: 90vw;
   max-height: 88vh;
   object-fit: contain;
-  border-radius: 1rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(59, 130, 246, 0.3);
-  transform: scale(0.95);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+  transform: scale(0.96);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lightbox-modal.active .lightbox-content {
@@ -193,9 +192,9 @@ details[open] {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  color: #f8fafc;
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   border-radius: 9999px;
   width: 44px;
   height: 44px;
@@ -207,14 +206,6 @@ details[open] {
 }
 
 .lightbox-close:hover {
-  background: #3b82f6;
-  transform: scale(1.1);
-}
-
-/* Neon Pill Badges */
-.badge-neon {
-  background: rgba(59, 130, 246, 0.12);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.15);
+  background: var(--accent-warm);
+  color: #ffffff;
 }

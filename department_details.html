@@ -11,10 +11,10 @@
             theme: {
                 extend: {
                     colors: {
-                        robuBlue: '#1a56db',
-                        robuBlueLight: '#3b82f6',
-                        robuDark: '#090d16',
-                        robuSlate: '#131b2e'
+                        claudeDark: '#121110',
+                        claudeCard: '#1a1816',
+                        claudeTerracotta: '#da7756',
+                        claudeOchre: '#d97706'
                     }
                 }
             }
@@ -22,7 +22,7 @@
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#090d16] text-slate-50 font-sans antialiased min-h-screen flex flex-col justify-between">
+<body class="bg-[#121110] text-[#f5f4f0] font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-[#da7756] selection:text-white">
 
     <!-- TOP SCROLL PROGRESS BAR -->
     <div id="scroll-progress"></div>
@@ -33,16 +33,16 @@
             <div class="flex justify-between h-16 items-center">
                 <!-- Top Left: Club Logo & Name -->
                 <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="ROBU_logo.jpg" alt="ROBU Logo" class="h-10 w-10 object-cover rounded-full border border-blue-500/40 group-hover:scale-105 transition-transform bg-white">
-                    <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">ROBU</span>
+                    <img src="ROBU_logo.jpg" alt="ROBU Logo" class="h-9 w-9 object-cover rounded-full border border-white/20 group-hover:scale-105 transition-transform bg-white">
+                    <span class="font-bold text-lg tracking-tight text-[#f5f4f0] group-hover:text-[#da7756] transition-colors">ROBU</span>
                 </a>
 
                 <!-- Top Right: Navigation Buttons -->
                 <nav class="flex items-center gap-4 sm:gap-6">
-                    <a href="departments.html" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition-colors">&larr; Departments</a>
-                    <a href="about.html" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition-colors">About Us</a>
+                    <a href="departments.html" class="text-sm font-medium text-[#a39e93] hover:text-[#f5f4f0] transition-colors">&larr; Departments</a>
+                    <a href="about.html" class="text-sm font-medium text-[#a39e93] hover:text-[#f5f4f0] transition-colors">About Us</a>
                     <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" 
-                       class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold px-4 py-2 rounded-xl shadow-md pulse-glow transition">
+                       class="bg-[#da7756] hover:bg-[#e0886a] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors flex items-center gap-2 shadow-sm">
                         Join Us
                     </a>
                 </nav>
@@ -53,23 +53,23 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         <!-- Back Link & Title -->
-        <a href="departments.html" class="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1.5 mb-6 transition">
+        <a href="departments.html" class="text-[#da7756] hover:text-[#e0886a] font-medium text-sm inline-flex items-center gap-1.5 mb-6 transition">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
             <span>Back to Departments</span>
         </a>
 
         <div class="mb-10">
-            <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4" id="dept-title">Loading...</h1>
-            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed bg-[#131b2e]/80 p-6 rounded-2xl border border-slate-700/60 shadow-inner" id="dept-desc"></p>
+            <h1 class="text-4xl sm:text-5xl font-bold text-[#f5f4f0] tracking-tight mb-4" id="dept-title">Loading...</h1>
+            <p class="text-base sm:text-lg text-[#a39e93] max-w-3xl leading-relaxed bg-[#1a1816] p-6 rounded-xl border border-white/10 shadow-sm" id="dept-desc"></p>
         </div>
 
         <!-- PANEL GALLERY HEADER -->
-        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-8">
-            <h2 class="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                <span>Current Panel Roster</span>
+        <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-8">
+            <h2 class="text-xl font-bold text-[#f5f4f0] tracking-tight flex items-center gap-2">
+                <svg class="w-5 h-5 text-[#da7756]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>Current Executive Roster</span>
             </h2>
-            <span class="text-xs font-bold text-blue-400 uppercase tracking-widest badge-neon px-3.5 py-1.5 rounded-full">
+            <span class="text-xs font-medium text-[#e58b6d] uppercase tracking-wider badge-claude px-3 py-1 rounded-full">
                 Click Image to Enlarge
             </span>
         </div>
@@ -89,7 +89,7 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-[#060911] border-t border-slate-800 text-slate-400 py-6 text-center text-sm mt-12">
+    <footer class="bg-[#0e0d0c] border-t border-white/10 text-[#a39e93] py-6 text-center text-sm mt-12">
         <p>&copy; 2026 ROBU IT Department. All rights reserved.</p>
     </footer>
 
@@ -249,7 +249,7 @@
             data.images.forEach(imagePath => {
                 const imgElement = document.createElement('img');
                 imgElement.src = imagePath;
-                imgElement.className = "w-full max-w-4xl h-auto rounded-2xl shadow-2xl border border-slate-700/80 object-contain bg-slate-800 transition-transform duration-300 hover:scale-[1.015] cursor-zoom-in";
+                imgElement.className = "w-full max-w-4xl h-auto rounded-xl shadow-2xl border border-white/10 object-contain bg-[#1a1816] transition-transform duration-250 hover:scale-[1.01] cursor-zoom-in";
                 imgElement.alt = data.title + " Panel Image";
                 
                 // Lightbox click handler
@@ -264,7 +264,7 @@
                 container.appendChild(imgElement);
             });
         } else {
-            container.innerHTML = '<p class="text-slate-400 py-8">No panel photos currently listed for this department.</p>';
+            container.innerHTML = '<p class="text-[#a39e93] py-8">No panel photos currently listed for this department.</p>';
         }
     </script>
 </body>
