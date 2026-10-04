@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>About Us | ROBU</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="p-8 md:p-24">
+<body class="bg-slate-900 text-slate-50 font-sans antialiased p-8 md:p-24">
     <div class="max-w-4xl mx-auto">
         <a href="index.html" class="text-blue-400 hover:text-blue-300 mb-8 inline-block">&larr; Back Home</a>
         
@@ -17,36 +17,92 @@
             <button onclick="showSection('milestones')" class="text-2xl font-bold text-slate-500 hover:text-blue-400 transition" id="btn-milestones">Milestones</button>
         </div>
 
-        <!-- Workshops Section (Accordion Drop-downs) -->
+        <!-- Workshops Section -->
         <div id="workshops-section" class="space-y-4">
             <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
-                <summary class="text-xl font-semibold outline-none">Path to Automation (LFR Workshop)</summary>
-                <div class="mt-4 text-slate-400 text-sm border-t border-slate-600 pt-4 cursor-text">
+                <summary class="text-xl font-semibold outline-none text-white">Path to Automation (LFR Workshop)</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
                     Organized by the Arts & Design Department in February 2025, this hands-on workshop equips students with the technical skills to build and program smart Line-Following Robots.
                 </div>
             </details>
 
             <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
-                <summary class="text-xl font-semibold outline-none">Embedded Hardware and Firmware Engineering</summary>
-                <div class="mt-4 text-slate-400 text-sm border-t border-slate-600 pt-4 cursor-text">
-                    An intensive program providing hands-on experience in industrial Embedded Systems, exploring STM32 microcontrollers and the complete hardware development lifecycle.
+                <summary class="text-xl font-semibold outline-none text-white">Soccer Bot Workshop</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Hosted by the Event Management Department, bringing in expert guest instructors to teach the mechanics and strategy behind building competitive 1v1 soccer bots.
+                </div>
+            </details>
+            
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none text-white">LaTeX for Research & Resumes</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Conducted by former club leadership, utilizing Overleaf to teach members how to professionally format research articles, project documentation, and academic resumes.
+                </div>
+            </details>
+            
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none text-white">GitHub & Career Optimization</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Foundational bootcamps on GitHub version control alongside HR-led seminars featuring alumni guest speakers who teach resume writing and LinkedIn optimization.
+                </div>
+            </details>
+
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none text-white">Embedded Hardware and Firmware Engineering</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    An intensive program providing comprehensive, hands-on experience in industrial Embedded Systems, exploring STM32 microcontrollers, advanced bit manipulation, and the complete hardware development lifecycle.
                 </div>
             </details>
         </div>
 
-        <!-- Milestones Section (Accordion Drop-downs) -->
+        <!-- Milestones Section -->
         <div id="milestones-section" class="space-y-4 hidden">
             <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
-                <summary class="text-xl font-semibold outline-none">BRACU Mongol-Tori (URC 2026)</summary>
-                <div class="mt-4 text-slate-400 text-sm border-t border-slate-600 pt-4 cursor-text">
-                    Achieved 7th place globally at the University Rover Challenge (URC) 2026, utilizing advanced ROS2 autonomy and a custom 7-DOF robotic arm for Mars analogs.
+                <summary class="text-xl font-semibold outline-none text-white">BRACU Mongol-Tori</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Achieved 7th place globally at the University Rover Challenge (URC) 2026, utilizing advanced ROS2 autonomy, differential GNSS RTK, and a custom 7-DOF robotic arm for extreme Martian analogs.
+                </div>
+            </details>
+            
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none text-white">BRACU Duburi</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Secured 8th place among 58 international contenders at RoboSub 2025, won a special "Entrepreneurship" award, and qualified for the 2025 Semi-Finals in Irvine, California.
+                </div>
+            </details>
+            
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none text-white">BRACU ALTER and Dichari</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Dichari finished 4th and won the Perseverance Award at the European Robotics League (ERL). ALTER qualified for the RoboCup Rescue Robot League finals as the solitary South Asian representative among 17 global finalists.
                 </div>
             </details>
 
             <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
-                <summary class="text-xl font-semibold outline-none">Team Automorph (WICO 2026)</summary>
-                <div class="mt-4 text-slate-400 text-sm border-t border-slate-600 pt-4 cursor-text">
-                    Secured Gold Medal and the prestigious Award of Excellence at the World Invention Creativity Olympic in Seoul, South Korea, placing in the top 1% out of 400 teams.
+                <summary class="text-xl font-semibold outline-none text-white">Team Automorph</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    Secured Gold Medal and the Award of Excellence at the World Invention Creativity Olympic 2026 in Seoul, placing in the top 1% out of around 400 teams.
+                </div>
+            </details>
+            
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none text-white">World Robot Games 2026</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    "Team Stellar" emerged as the Champion in the Soccer Robot 1v1 category at the National Qualifiers, earning the honor to represent Bangladesh at the International Round in Chiba, Japan.
+                </div>
+            </details>
+            
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none text-white">TRACTION (অভ্যুদয়)</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    ROBU's flagship, self-hosted national robotics competition challenging engineers across disciplines like RoboStrikers, MechaSprint, Pathfinder, Aqua Wars, and Prompt Engineering.
+                </div>
+            </details>
+            
+            <details class="bg-slate-800 rounded-lg p-4 border border-slate-700 cursor-pointer group">
+                <summary class="text-xl font-semibold outline-none text-white">ROBOSPHERE 2025</summary>
+                <div class="mt-4 text-slate-300 text-sm border-t border-slate-600 pt-4 cursor-text">
+                    An Intra-Departmental Robotics Competition jointly hosted by the HR and IT Departments, featuring Line Follower Race (LFR), Prompt Engineering, and Project Showcase.
                 </div>
             </details>
         </div>
