@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBU | Robotics Club of BRAC University</title>
+    <!-- Tailwind CSS for rapid styling without a build step -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        robuBlue: '#1a56db', /* Recommended styling: Matches the blue from the ROBU logo */
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Link to separate custom CSS for overriding styles if needed -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans scroll-smooth">
+
+    <!-- HEADER / NAVIGATION (Keep logic simple so IT can edit easily) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                
+                <!-- Top Left: Club Logo & Name -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Replace the src with your actual logo file path -->
+                    <img src="assets/image_6b7e48.jpg" alt="ROBU Logo" class="h-10 w-10 object-contain rounded-full border border-gray-200">
+                    <span class="font-bold text-xl tracking-tight text-gray-800">ROBU</span>
+                </div>
+                
+                <!-- Top Right: 3 Action Buttons -->
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="#about" class="text-gray-600 hover:text-robuBlue font-medium transition-colors">About</a>
+                    <a href="#explore" class="text-gray-600 hover:text-robuBlue font-medium transition-colors">Explore</a>
+                    <a href="#join" class="bg-robuBlue text-white px-5 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors shadow-sm">Join Us</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        
+        <!-- HERO / INTRO SECTION -->
+        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                Robotics Club of BRAC University
+            </h1>
+            
+            <!-- Vision Statement derived from the provided document -->
+            <p class="text-xl md:text-2xl text-gray-700 font-light italic mb-8 max-w-3xl mx-auto">
+                "Achieve your imagination through your robot"
+            </p>
+
+            <p class="text-md text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Join a dynamic community of innovators. Start your journey as an Apprentice and build your way up to the Core Panel, developing skills in engineering, design, and leadership.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#explore" class="border border-gray-300 bg-white text-gray-700 px-8 py-3 rounded-md hover:bg-gray-50 font-semibold transition">
+                    View Departments
+                </a>
+                <!-- This button can trigger your Tally embed or link to the form -->
+                <a href="#join" class="bg-robuBlue text-white px-8 py-3 rounded-md hover:bg-blue-700 font-semibold transition shadow-md">
+                    Apply as Apprentice
+                </a>
+            </div>
+        </section>
+
+        <!-- EXPLORE DEPARTMENTS PLACEHOLDER -->
+        <section id="explore" class="bg-gray-100 py-16">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Departments</h2>
+                <p class="text-gray-600">From Strategic Planning to Arts & Design, find your fit.</p>
+                <!-- Add Department Cards Here -->
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
