@@ -1,39 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Departments | ROBU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Departments | ROBU Journal & Recruitment</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        robuBlue: '#1a56db',
+                        robuBlueLight: '#3b82f6',
+                        robuDark: '#0f172a',
+                        robuSlate: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-900 text-slate-50 font-sans antialiased p-8 md:p-24">
-    <div class="max-w-3xl mx-auto">
-        <a href="index.html" class="text-blue-400 hover:text-blue-300 mb-8 inline-block">&larr; Back Home</a>
-        <h1 class="text-4xl font-bold mb-10 text-white">Our Departments</h1>
-        
-        <div class="flex flex-col gap-4">
-            <a href="department_details.html?dept=sp" class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 border border-slate-700 transition">
-                <h2 class="text-2xl font-semibold text-white">Strategic Planning (SP)</h2>
-            </a>
-            <a href="department_details.html?dept=fm" class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 border border-slate-700 transition">
-                <h2 class="text-2xl font-semibold text-white">Finance & Marketing (F&M)</h2>
-            </a>
-            <a href="department_details.html?dept=hr" class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 border border-slate-700 transition">
-                <h2 class="text-2xl font-semibold text-white">Human Resources (HR)</h2>
-            </a>
-            <a href="department_details.html?dept=em" class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 border border-slate-700 transition">
-                <h2 class="text-2xl font-semibold text-white">Event Management</h2>
-            </a>
-            <a href="department_details.html?dept=ad" class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 border border-slate-700 transition">
-                <h2 class="text-2xl font-semibold text-white">Arts & Design (A&D)</h2>
-            </a>
-            <a href="department_details.html?dept=it" class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 border border-slate-700 transition">
-                <h2 class="text-2xl font-semibold text-white">Information Technology (IT)</h2>
-            </a>
-            <a href="department_details.html?dept=ep" class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 border border-slate-700 transition">
-                <h2 class="text-2xl font-semibold text-white">Editorial And Publication (E&P)</h2>
-            </a>
+<body class="bg-slate-900 text-slate-50 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- STICKY HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 nav-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Top Left: Club Logo & Name -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="ROBU_logo.jpg" alt="ROBU Logo" class="h-10 w-10 object-cover rounded-full border border-blue-500/40 group-hover:scale-105 transition-transform bg-white">
+                    <span class="font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">ROBU</span>
+                </a>
+
+                <!-- Top Right: Navigation Buttons -->
+                <nav class="flex items-center gap-4 sm:gap-6">
+                    <a href="index.html" class="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors">&larr; Home</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors">About Us</a>
+                    <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" 
+                       class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-md transition">
+                        Join Us
+                    </a>
+                </nav>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <!-- Back Link & Title -->
+        <div class="mb-8">
+            <a href="index.html" class="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-1.5 mb-4 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                <span>Back to Home</span>
+            </a>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Our Departments</h1>
+            <p class="text-slate-400 mt-2 text-lg">Click on any department to view their responsibilities and executive panel.</p>
+        </div>
+
+        <!-- NEAT STACK OF DEPARTMENTS -->
+        <div class="flex flex-col gap-4">
+
+            <!-- 1. Strategic Planning (SP) -->
+            <a href="department_details.html?dept=sp" class="block p-6 bg-slate-800/90 rounded-xl hover:bg-slate-700/90 border border-slate-700/80 hover:border-blue-500/50 transition-all duration-200 group shadow-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                            SP
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Strategic Planning (SP)</h2>
+                            <p class="text-slate-400 text-sm mt-1">Shaping long-term vision, organizing TRACTION national competition & flagship projects.</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 2. Finance & Marketing (F&M) -->
+            <a href="department_details.html?dept=fm" class="block p-6 bg-slate-800/90 rounded-xl hover:bg-slate-700/90 border border-slate-700/80 hover:border-emerald-500/50 transition-all duration-200 group shadow-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                            F&M
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">Finance & Marketing (F&M)</h2>
+                            <p class="text-slate-400 text-sm mt-1">Securing corporate sponsorships, budgeting rover/AUV teams, and leading outreach.</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 3. Human Resources (HR) -->
+            <a href="department_details.html?dept=hr" class="block p-6 bg-slate-800/90 rounded-xl hover:bg-slate-700/90 border border-slate-700/80 hover:border-purple-500/50 transition-all duration-200 group shadow-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                            HR
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">Human Resources (HR)</h2>
+                            <p class="text-slate-400 text-sm mt-1">Managing recruitment, internal performance, career bootcamps, and club culture.</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 4. Event Management -->
+            <a href="department_details.html?dept=em" class="block p-6 bg-slate-800/90 rounded-xl hover:bg-slate-700/90 border border-slate-700/80 hover:border-amber-500/50 transition-all duration-200 group shadow-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                            EM
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">Event Management</h2>
+                            <p class="text-slate-400 text-sm mt-1">Venue logistics, hackathons, operational flows, and grand seminar execution.</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 5. Arts & Design (A&D) -->
+            <a href="department_details.html?dept=ad" class="block p-6 bg-slate-800/90 rounded-xl hover:bg-slate-700/90 border border-slate-700/80 hover:border-pink-500/50 transition-all duration-200 group shadow-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                            A&D
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white group-hover:text-pink-400 transition-colors">Arts & Design (A&D)</h2>
+                            <p class="text-slate-400 text-sm mt-1">Event posters, visual assets, UI/UX project design, and club visual identity.</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-500 group-hover:text-pink-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 6. Information Technology (IT) -->
+            <a href="department_details.html?dept=it" class="block p-6 bg-slate-800/90 rounded-xl hover:bg-slate-700/90 border border-slate-700/80 hover:border-cyan-500/50 transition-all duration-200 group shadow-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                            IT
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Information Technology (IT)</h2>
+                            <p class="text-slate-400 text-sm mt-1">Managing club web applications, recruitment portals, and cloud infrastructure.</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 7. Editorial And Publication (E&P) -->
+            <a href="department_details.html?dept=ep" class="block p-6 bg-slate-800/90 rounded-xl hover:bg-slate-700/90 border border-slate-700/80 hover:border-indigo-500/50 transition-all duration-200 group shadow-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                            E&P
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors">Editorial And Publication (E&P)</h2>
+                            <p class="text-slate-400 text-sm mt-1">Publishing the ROBU Journal, technical articles, and public press releases.</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <!-- 8. Research & Project Management (RPM) -->
+            <a href="department_details.html?dept=rpm" class="block p-6 bg-slate-800/90 rounded-xl hover:bg-slate-700/90 border border-slate-700/80 hover:border-teal-500/50 transition-all duration-200 group shadow-md">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+                            RPM
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white group-hover:text-teal-400 transition-colors">Research & Project Management (RPM)</h2>
+                            <p class="text-slate-400 text-sm mt-1">Supervising autonomous robotics R&D, paper publications, and hardware prototypes.</p>
+                        </div>
+                    </div>
+                    <svg class="w-6 h-6 text-slate-500 group-hover:text-teal-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-6 text-center text-sm">
+        <p>&copy; 2026 ROBU IT Department. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

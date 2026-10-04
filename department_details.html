@@ -1,38 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Department Detail | ROBU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Details | ROBU</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        robuBlue: '#1a56db',
+                        robuBlueLight: '#3b82f6',
+                        robuDark: '#0f172a',
+                        robuSlate: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="p-8 md:p-24">
-    <div class="max-w-5xl mx-auto">
-        <a href="departments.html" class="text-blue-400 hover:text-blue-300 mb-8 inline-block">&larr; Back to Departments</a>
-        
-        <h1 class="text-4xl font-bold mb-4" id="dept-title">Strategic Planning (SP)</h1>
-        <p class="text-xl text-slate-400 mb-12 max-w-3xl" id="dept-desc">
-            Shaping the long-term vision of the club, planning flagship national competitions (like TRACTION), and coordinating major robotics projects.
-        </p>
+<body class="bg-slate-900 text-slate-50 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-        <h2 class="text-2xl font-semibold mb-6 border-b border-slate-700 pb-2">Current Panel</h2>
-        
-        <!-- Scrolling Fashion Panel -->
-        <div class="scrolling-wrapper">
-            <!-- Example Card 1 -->
-            <div class="scrolling-card bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
-                <img src="ROBU_Photos/DADS panel/SP/director.jpg" alt="Director" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-                <h3 class="font-bold text-lg">Jane Doe</h3>
-                <p class="text-blue-400 text-sm">Director</p>
+    <!-- STICKY HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 nav-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Top Left: Club Logo & Name -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="ROBU_logo.jpg" alt="ROBU Logo" class="h-10 w-10 object-cover rounded-full border border-blue-500/40 group-hover:scale-105 transition-transform bg-white">
+                    <span class="font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">ROBU</span>
+                </a>
+
+                <!-- Top Right: Navigation Buttons -->
+                <nav class="flex items-center gap-4 sm:gap-6">
+                    <a href="departments.html" class="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors">&larr; Departments</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors">About Us</a>
+                    <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" 
+                       class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-md transition">
+                        Join Us
+                    </a>
+                </nav>
             </div>
-            <!-- Example Card 2 -->
-            <div class="scrolling-card bg-slate-800 rounded-lg p-4 text-center border border-slate-700">
-                <img src="ROBU_Photos/DADS panel/SP/ad.jpg" alt="Assistant Director" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-                <h3 class="font-bold text-lg">John Smith</h3>
-                <p class="text-blue-400 text-sm">Assistant Director</p>
-            </div>
-             <!-- Add more cards as needed -->
         </div>
-    </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <!-- Back Link & Title -->
+        <a href="departments.html" class="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-1.5 mb-6 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            <span>Back to Departments</span>
+        </a>
+
+        <div class="mb-10">
+            <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4" id="dept-title">Loading...</h1>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60 shadow-inner" id="dept-desc"></p>
+        </div>
+
+        <!-- PANEL GALLERY HEADER -->
+        <div class="flex items-center justify-between border-b border-slate-700/80 pb-3 mb-8">
+            <h2 class="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                Current Panel
+            </h2>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest bg-slate-800 px-3 py-1 rounded-full border border-slate-700">Official Roster</span>
+        </div>
+
+        <!-- RAW STACKED IMAGE CONTAINER WITH NO CAPTIONS -->
+        <div id="image-container" class="flex flex-col gap-8 items-center w-full">
+            <!-- Dynamic Panel Images will be injected here as raw stacked images with zero captions -->
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-6 text-center text-sm mt-12">
+        <p>&copy; 2026 ROBU IT Department. All rights reserved.</p>
+    </footer>
+
+    <!-- DYNAMIC JAVASCRIPT LOGIC -->
+    <script>
+        // Exact dictionary mapping of uploaded panel photos in ROBU_Photos/DADS panel/
+        const deptData = {
+            'sp': {
+                title: 'Strategic Planning (SP)',
+                desc: 'Shaping the long-term vision of the club, planning flagship national competitions (like TRACTION), and coordinating major robotics projects across disciplines.',
+                images: [
+                    'ROBU_Photos/DADS panel/SP/673826441_1423286773174129_4949489274163091573_n.jpg',
+                    'ROBU_Photos/DADS panel/SP/674069754_1423286726507467_3782876720057156341_n.jpg',
+                    'ROBU_Photos/DADS panel/SP/674691713_1423286756507464_4318152425785418302_n.jpg',
+                    'ROBU_Photos/DADS panel/SP/677100239_1423286849840788_7411148929201602104_n.jpg',
+                    'ROBU_Photos/DADS panel/SP/677141232_1423286833174123_4770332452173137434_n.jpg',
+                    'ROBU_Photos/DADS panel/SP/679083634_1423286796507460_3473592381042358477_n.jpg',
+                    'ROBU_Photos/DADS panel/SP/679105103_1423286829840790_7309669078715596027_n.jpg'
+                ]
+            },
+            'fm': {
+                title: 'Finance & Marketing (F&M)',
+                desc: 'Securing sponsorships, managing project budgets (e.g., funding for rover and AUV teams), and promoting club initiatives to external corporate partners.',
+                images: [
+                    'ROBU_Photos/DADS panel/F&M/673848253_1423203506515789_479471016085244625_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/674000868_1423203593182447_3082394869090734637_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/674040445_1423203503182456_685051922696029000_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/674368839_1423203463182460_3297014984419509170_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/674932655_1423203296515810_2565146160270167384_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/675439041_1423203676515772_4977798808288692847_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/675544064_1423203323182474_4936508192064069369_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/678397619_1423203696515770_2450902018527748347_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/679092349_1423203319849141_4614218712381109517_n.jpg',
+                    'ROBU_Photos/DADS panel/F&M/688132803_1434006305435509_8752321479368552757_n.jpg'
+                ]
+            },
+            'hr': {
+                title: 'Human Resources (HR)',
+                desc: 'Managing member recruitment, performance tracking, professional development workshops, and cultivating internal club culture.',
+                images: [
+                    'ROBU_Photos/DADS panel/HR/director.jpg',
+                    'ROBU_Photos/DADS panel/HR/secretary.jpg',
+                    'ROBU_Photos/DADS panel/HR/secre.jpg',
+                    'ROBU_Photos/DADS panel/HR/secre2.jpg',
+                    'ROBU_Photos/DADS panel/HR/asd.jpg',
+                    'ROBU_Photos/DADS panel/HR/asd2.jpg',
+                    'ROBU_Photos/DADS panel/HR/asd3.jpg'
+                ]
+            },
+            'em': {
+                title: 'Event Management',
+                desc: 'Executing logistics, venue setup, and operational flow for club-hosted national events, intra-university competitions, and hackathons.',
+                images: [
+                    'ROBU_Photos/DADS panel/RPM/674034992_1423186646517475_2710580022642133697_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/675550830_1423186313184175_620965923997288914_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/676860854_1423186563184150_3153731508211676466_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/676893015_1423186333184173_5047558756657331782_n.jpg'
+                ]
+            },
+            'ad': {
+                title: 'Arts & Design (A&D)',
+                desc: 'Creating all visual assets, event posters, UI/UX designs for projects, and maintaining the club\'s brand identity.',
+                images: [
+                    'ROBU_Photos/DADS panel/A&D/674979417_1424113236424816_5610402609200323334_n.jpg',
+                    'ROBU_Photos/DADS panel/A&D/675147961_1424113156424824_487163539825636814_n.jpg',
+                    'ROBU_Photos/DADS panel/A&D/676891098_1424113266424813_5011486235131436588_n.jpg',
+                    'ROBU_Photos/DADS panel/A&D/678197655_1424113286424811_756345424603879189_n.jpg',
+                    'ROBU_Photos/DADS panel/A&D/678281611_1424113159758157_2073817858551152188_n.jpg',
+                    'ROBU_Photos/DADS panel/A&D/678977907_1424113163091490_5913420708182334250_n.jpg'
+                ]
+            },
+            'it': {
+                title: 'Information Technology (IT)',
+                desc: 'Managing the club\'s digital infrastructure, web applications, recruitment portals, and cloud integrations.',
+                images: [
+                    'ROBU_Photos/DADS panel/IT/688570062_1435460668623406_6836066336851728251_n.jpg',
+                    'ROBU_Photos/DADS panel/IT/689200715_1435460411956765_8710332605242163559_n.jpg',
+                    'ROBU_Photos/DADS panel/IT/689477185_1435460808623392_3240785997023291157_n.jpg',
+                    'ROBU_Photos/DADS panel/IT/689625887_1435460688623404_2511871263422743700_n.jpg',
+                    'ROBU_Photos/DADS panel/IT/689839828_1435460425290097_6863043592609648008_n.jpg',
+                    'ROBU_Photos/DADS panel/IT/690654345_1435460451956761_9193754441553934750_n.jpg',
+                    'ROBU_Photos/DADS panel/IT/690836311_1435460655290074_5139276321412004480_n.jpg',
+                    'ROBU_Photos/DADS panel/IT/692349784_1435460831956723_2192374450717097785_n.jpg'
+                ]
+            },
+            'ep': {
+                title: 'Editorial And Publication (E&P)',
+                desc: 'Combining editorial and outreach work alongside major publications, press releases, and the ROBU Journal.',
+                images: [
+                    'ROBU_Photos/DADS panel/E&P/688199887_1435137861989020_5243740006093296476_n.jpg',
+                    'ROBU_Photos/DADS panel/E&P/689669300_1435137851989021_6699413033639847184_n.jpg',
+                    'ROBU_Photos/DADS panel/E&P/690601793_1435137848655688_2278551660582740471_n.jpg'
+                ]
+            },
+            'rpm': {
+                title: 'Research & Project Management (RPM)',
+                desc: 'Supervising autonomous robotics R&D, competition hardware, and research publications.',
+                images: [
+                    'ROBU_Photos/DADS panel/RPM/674034992_1423186646517475_2710580022642133697_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/675550830_1423186313184175_620965923997288914_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/676860854_1423186563184150_3153731508211676466_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/676893015_1423186333184173_5047558756657331782_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/677775743_1423186339850839_1293181940581528776_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/678041918_1423186443184162_5545042721336467053_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/678204271_1423186643184142_2329508188939714404_n.jpg',
+                    'ROBU_Photos/DADS panel/RPM/729480215_2099871680591841_6890806487260619431_n.jpg'
+                ]
+            }
+        };
+
+        // Read URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const deptKey = urlParams.get('dept') ? urlParams.get('dept').toLowerCase() : 'sp';
+        const data = deptData[deptKey] || deptData['sp'];
+
+        // Populate title and description
+        document.getElementById('dept-title').innerText = data.title;
+        document.getElementById('dept-desc').innerText = data.desc;
+        document.title = data.title + " | ROBU";
+
+        // Render images as raw images stacked with NO CAPTIONS
+        const container = document.getElementById('image-container');
+        if (data.images && data.images.length > 0) {
+            data.images.forEach(imagePath => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imagePath;
+                imgElement.className = "w-full max-w-4xl h-auto rounded-2xl shadow-2xl border border-slate-700/80 object-contain bg-slate-800 transition-transform duration-300 hover:scale-[1.01]";
+                imgElement.alt = data.title + " Panel Image";
+                
+                // Fallback handling
+                imgElement.onerror = function() {
+                    this.onerror = null;
+                    this.classList.add('hidden');
+                };
+
+                container.appendChild(imgElement);
+            });
+        } else {
+            container.innerHTML = '<p class="text-slate-400 py-8">No panel photos currently listed for this department.</p>';
+        }
+    </script>
 </body>
 </html>

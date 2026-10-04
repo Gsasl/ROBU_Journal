@@ -1,53 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROBU | Robotics Club of BRAC University</title>
+    <meta name="description" content="Official website and recruitment portal for the Robotics Club of BRAC University (ROBU) - Achieve your imagination through your robot.">
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        robuBlue: '#1a56db',
+                        robuBlueLight: '#3b82f6',
+                        robuDark: '#0f172a',
+                        robuSlate: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-900 text-slate-50 font-sans antialiased">
-    
-    <!-- Hero Section with Fading Background -->
-    <header class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
-        
-        <!-- Dark fading overlay directly applied via Tailwind for reliability -->
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900 z-0"></div>
+<body class="bg-slate-900 text-slate-50 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-        <div class="hero-content relative z-10 max-w-4xl mx-auto flex flex-col items-center mt-12">
-            
-            <!-- Club Logo: Path updated to match GitHub upload -->
-            <img src="ROBU_logo.jpg" alt="ROBU Logo" class="w-32 h-32 mb-8 rounded-full shadow-2xl border-2 border-slate-700 object-cover bg-white">
-            
-            <!-- Clear Striking Intro -->
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white drop-shadow-lg">
-                Robotics Club of BRAC University
-            </h1>
-            
-            <!-- The Added Missing Intro Line -->
-            <p class="text-xl md:text-2xl font-medium italic mb-4 text-blue-400 drop-shadow-md">
-                "Achieve your imagination through your robot"—the vision of the high-functioning sociopaths of ROBU!
-            </p>
+    <!-- STICKY HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 nav-glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Top Left: Club Logo & Name -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="ROBU_logo.jpg" alt="ROBU Logo" class="h-10 w-10 object-cover rounded-full border border-blue-500/40 group-hover:scale-105 transition-transform bg-white">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">ROBU</span>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-widest hidden sm:inline-block">BRAC University</span>
+                    </div>
+                </a>
 
-            <p class="text-lg font-light italic mb-8 text-slate-300">
-                "Small is beautiful, but big is necessary"
-            </p>
-            
-            <p class="text-lg text-slate-400 mb-12 max-w-2xl leading-relaxed">
-                Evolved from a small laboratory into a national launchpad for deep-tech innovation and global engineering competitiveness.
-            </p>
-
-            <!-- Navigation / Action Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                <a href="departments.html" class="px-8 py-3 rounded-lg border border-slate-600 hover:bg-slate-700 hover:border-slate-500 transition bg-slate-800/50 backdrop-blur-sm">Our Departments</a>
-                <a href="about.html" class="px-8 py-3 rounded-lg border border-slate-600 hover:bg-slate-700 hover:border-slate-500 transition bg-slate-800/50 backdrop-blur-sm">About Us</a>
-                
-                <!-- Join Us opens in a new tab to Google Forms -->
-                <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" class="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 font-bold shadow-lg shadow-blue-900/50 transition">Join Us</a>
+                <!-- Top Right: Action Buttons (About, Explore / Departments, Join Us) -->
+                <nav class="flex items-center gap-4 sm:gap-6">
+                    <a href="about.html" class="text-sm sm:text-base font-medium text-slate-300 hover:text-blue-400 transition-colors">About Us</a>
+                    <a href="departments.html" class="text-sm sm:text-base font-medium text-slate-300 hover:text-blue-400 transition-colors">Explore</a>
+                    <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" 
+                       class="bg-blue-600 hover:bg-blue-500 text-white text-sm sm:text-base font-semibold px-4 py-2 rounded-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 transition-all flex items-center gap-1.5">
+                        <span>Join Us</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </nav>
             </div>
         </div>
     </header>
+
+    <!-- HERO SECTION WITH FADING BACKGROUND PHOTO -->
+    <header class="hero-bg min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center px-4 py-16 relative">
+        <div class="hero-content max-w-4xl mx-auto flex flex-col items-center">
+            
+            <!-- Club Logo Rendering Center Header -->
+            <div class="relative mb-6 group">
+                <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 blur-lg opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                <img src="ROBU_logo.jpg" alt="ROBU Club Logo" class="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full shadow-2xl border-2 border-slate-700 object-cover bg-white">
+            </div>
+
+            <!-- Clear Striking Intro Heading -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-4 text-white drop-shadow-md leading-tight">
+                Robotics Club of <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400">BRAC University</span>
+            </h1>
+
+            <!-- Striking Vision Line -->
+            <p class="text-lg sm:text-2xl font-semibold italic mb-3 text-blue-400 drop-shadow-md max-w-3xl leading-snug">
+                "Achieve your imagination through your robot"—the vision of the high-functioning sociopaths of ROBU!
+            </p>
+
+            <!-- Motto -->
+            <p class="text-base sm:text-xl font-light italic mb-6 text-slate-300">
+                "Small is beautiful, but big is necessary"
+            </p>
+
+            <!-- Narrative Paragraph -->
+            <p class="text-sm sm:text-lg text-slate-400 mb-10 max-w-2xl leading-relaxed">
+                Evolved from a small laboratory into a national launchpad for deep-tech innovation and global engineering competitiveness. Join our dynamic team of engineers, designers, and strategists.
+            </p>
+
+            <!-- Action Buttons Stack -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md">
+                <a href="departments.html" class="px-8 py-3.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/80 hover:border-slate-500 text-white font-semibold transition shadow-md backdrop-blur-md flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    <span>Our Departments</span>
+                </a>
+                <a href="about.html" class="px-8 py-3.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/80 hover:border-slate-500 text-white font-semibold transition shadow-md backdrop-blur-md flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>About Us</span>
+                </a>
+                <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" 
+                   class="px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition shadow-lg shadow-blue-600/40 glow-hover flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+                    <span>Join Us</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HIGHLIGHT PORTAL CARDS SECTION -->
+    <section class="py-16 bg-slate-950 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Why Join ROBU?</h2>
+                <p class="text-slate-400 mt-2">Explore our corporate-style progression track, global achievements, and specialized departments.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Departments -->
+                <a href="departments.html" class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Functional Departments</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Discover Strategic Planning, Finance & Marketing, HR, Event Management, Arts & Design, IT, Editorial & Publication, and Research & Project Management.</p>
+                    <span class="text-blue-400 text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        View Panels &rarr;
+                    </span>
+                </a>
+
+                <!-- Card 2: Workshops & Milestones -->
+                <a href="about.html" class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Workshops & Milestones</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Learn about LFR, Soccer Bot, STM32 Embedded firmware workshops, plus global URC (Mongol-Tori), RoboSub (Duburi), and WICO Gold Medals.</p>
+                    <span class="text-cyan-400 text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Explore Achievements &rarr;
+                    </span>
+                </a>
+
+                <!-- Card 3: Career Progression Track -->
+                <a href="about.html?tab=career" class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Recruitment Career Track</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Start your journey as an entry-level Apprentice (AP), progress through Executive Body roles, and advance to Sub-Panel and Core Panel leadership.</p>
+                    <span class="text-purple-400 text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Check Leadership Track &rarr;
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-8 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <img src="ROBU_logo.jpg" alt="ROBU Logo" class="h-6 w-6 rounded-full bg-white">
+                <span class="text-slate-300 font-semibold">Robotics Club of BRAC University</span>
+            </div>
+            <p>&copy; 2026 ROBU IT Department. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
