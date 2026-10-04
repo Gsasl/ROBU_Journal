@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Workshops & Milestones | ROBU</title>
+    <title>About Us | Workshops, Milestones & Events | ROBU</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,7 +41,7 @@
                 <nav class="flex items-center gap-4 sm:gap-6">
                     <a href="index.html" class="text-sm font-medium text-[#a39e93] hover:text-[#f5f4f0] transition-colors">&larr; Home</a>
                     <a href="departments.html" class="text-sm font-medium text-[#a39e93] hover:text-[#f5f4f0] transition-colors">Departments</a>
-                    <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://join.bracurobu.com/" target="_blank" rel="noopener noreferrer" 
                        class="bg-[#da7756] hover:bg-[#e0886a] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors flex items-center gap-2 shadow-sm">
                         Join Us
                     </a>
@@ -59,24 +59,30 @@
         </a>
 
         <h1 class="text-4xl sm:text-5xl font-bold text-[#f5f4f0] tracking-tight mb-4">About ROBU</h1>
-        <p class="text-[#a39e93] text-base sm:text-lg mb-8">Discover our hands-on technical workshops, global competition milestones, and recruitment progression track.</p>
+        <p class="text-[#a39e93] text-base sm:text-lg mb-8">Discover our hands-on technical workshops, global competition milestones, event photo gallery, and recruitment progression track.</p>
 
         <!-- SECTION TABS MENU -->
-        <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-8 border-b border-white/10 pb-4">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-8 border-b border-white/10 pb-4">
             <button onclick="showSection('workshops')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm" 
+                    class="text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm" 
                     id="btn-workshops">
                 Workshops
             </button>
-            <span class="text-2xl text-[#736e65] hidden sm:inline">|</span>
+            <span class="text-xl text-[#736e65] hidden sm:inline">|</span>
             <button onclick="showSection('milestones')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
+                    class="text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
                     id="btn-milestones">
                 Milestones
             </button>
-            <span class="text-2xl text-[#736e65] hidden sm:inline">|</span>
+            <span class="text-xl text-[#736e65] hidden sm:inline">|</span>
+            <button onclick="showSection('events')" 
+                    class="text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
+                    id="btn-events">
+                Event Gallery
+            </button>
+            <span class="text-xl text-[#736e65] hidden sm:inline">|</span>
             <button onclick="showSection('career')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
+                    class="text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
                     id="btn-career">
                 Career Track
             </button>
@@ -240,6 +246,49 @@
             </details>
         </div>
 
+        <!-- EVENT GALLERY SECTION (IMAGES FROM ROBU_Photos/Events/ WITH LIGHTBOX) -->
+        <div id="events-section" class="space-y-6 hidden">
+            <div class="bg-[#1a1816] p-6 sm:p-8 rounded-xl border border-white/10 shadow-sm">
+                <h2 class="text-2xl font-bold text-[#f5f4f0] mb-2">Event Photo Showcase</h2>
+                <p class="text-[#a39e93] text-sm mb-6">Highlights from national competitions, global rover challenges, and underwater robotics showcases. Click any image to view in full screen.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Event 1: TRACTION -->
+                    <div class="card-claude overflow-hidden rounded-xl group cursor-zoom-in" onclick="openLightbox('ROBU_Photos/Events/Traction.jpg')">
+                        <div class="h-48 overflow-hidden bg-[#121110]">
+                            <img src="ROBU_Photos/Events/Traction.jpg" alt="TRACTION National Competition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-[#f5f4f0] text-base group-hover:text-[#da7756] transition-colors">TRACTION National Festival</h3>
+                            <p class="text-[#a39e93] text-xs mt-1">Flagship robotics tournament organized by ROBU.</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 2: URC 2026 -->
+                    <div class="card-claude overflow-hidden rounded-xl group cursor-zoom-in" onclick="openLightbox('ROBU_Photos/Events/URC_2026_1.jpg')">
+                        <div class="h-48 overflow-hidden bg-[#121110]">
+                            <img src="ROBU_Photos/Events/URC_2026_1.jpg" alt="URC 2026 BRACU Mongol-Tori" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-[#f5f4f0] text-base group-hover:text-[#da7756] transition-colors">BRACU Mongol-Tori (URC 2026)</h3>
+                            <p class="text-[#a39e93] text-xs mt-1">Global 7th place team at Utah Mars Desert Research Station.</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 3: RoboSub -->
+                    <div class="card-claude overflow-hidden rounded-xl group cursor-zoom-in" onclick="openLightbox('ROBU_Photos/Events/robosub.jpg')">
+                        <div class="h-48 overflow-hidden bg-[#121110]">
+                            <img src="ROBU_Photos/Events/robosub.jpg" alt="BRACU Duburi RoboSub 2025" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-[#f5f4f0] text-base group-hover:text-[#da7756] transition-colors">BRACU Duburi (RoboSub 2025)</h3>
+                            <p class="text-[#a39e93] text-xs mt-1">International AUV team in California, USA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- RECRUITMENT CAREER TRACK SECTION -->
         <div id="career-section" class="space-y-6 hidden">
             <div class="bg-[#1a1816] p-6 sm:p-8 rounded-xl border border-white/10 shadow-sm">
@@ -282,6 +331,14 @@
 
     </main>
 
+    <!-- FULL-SCREEN LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox-modal" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged Event View">
+    </div>
+
     <!-- FOOTER -->
     <footer class="bg-[#0e0d0c] border-t border-white/10 text-[#a39e93] py-6 text-center text-sm">
         <p>&copy; 2026 ROBU IT Department. All rights reserved.</p>
@@ -297,13 +354,39 @@
             document.getElementById('scroll-progress').style.width = scrolled + '%';
         });
 
+        // Lightbox Modal Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
         function showSection(section) {
             document.getElementById('workshops-section').classList.add('hidden');
             document.getElementById('milestones-section').classList.add('hidden');
+            document.getElementById('events-section').classList.add('hidden');
             document.getElementById('career-section').classList.add('hidden');
 
             const searchContainer = document.getElementById('about-search-container');
-            if (section === 'career') {
+            if (section === 'career' || section === 'events') {
                 searchContainer.classList.add('hidden');
             } else {
                 searchContainer.classList.remove('hidden');
@@ -311,23 +394,27 @@
 
             const btnW = document.getElementById('btn-workshops');
             const btnM = document.getElementById('btn-milestones');
+            const btnE = document.getElementById('btn-events');
             const btnC = document.getElementById('btn-career');
 
             // Reset tab styles
-            [btnW, btnM, btnC].forEach(b => {
-                b.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60";
+            [btnW, btnM, btnE, btnC].forEach(b => {
+                b.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60";
             });
 
             // Activate target section
             if (section === 'workshops') {
                 document.getElementById('workshops-section').classList.remove('hidden');
-                btnW.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
+                btnW.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             } else if (section === 'milestones') {
                 document.getElementById('milestones-section').classList.remove('hidden');
-                btnM.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
+                btnM.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
+            } else if (section === 'events') {
+                document.getElementById('events-section').classList.remove('hidden');
+                btnE.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             } else if (section === 'career') {
                 document.getElementById('career-section').classList.remove('hidden');
-                btnC.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
+                btnC.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             }
         }
 
@@ -350,10 +437,12 @@
             });
         });
 
-        // Support opening career tab via URL query parameter ?tab=career
+        // Support opening career or events tab via URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('tab') === 'career') {
             showSection('career');
+        } else if (urlParams.get('tab') === 'events') {
+            showSection('events');
         } else if (urlParams.get('tab') === 'milestones') {
             showSection('milestones');
         }
