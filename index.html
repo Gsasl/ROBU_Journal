@@ -5,34 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROBU | Robotics Club of BRAC University</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-sans antialiased">
+<body class="bg-slate-900 text-slate-50 font-sans antialiased">
     
     <!-- Hero Section with Fading Background -->
-    <header class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-4">
-        <div class="hero-content max-w-4xl mx-auto flex flex-col items-center">
+    <header class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+        
+        <!-- Dark fading overlay directly applied via Tailwind for reliability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900 z-0"></div>
+
+        <div class="hero-content relative z-10 max-w-4xl mx-auto flex flex-col items-center mt-12">
             
-            <!-- Club Logo -->
-            <img src="ROBU_Photos/logo.png" alt="ROBU Logo" class="w-32 h-32 mb-8 rounded-full shadow-lg border-2 border-slate-700">
+            <!-- Club Logo: Path updated to match GitHub upload -->
+            <img src="ROBU_logo.jpg" alt="ROBU Logo" class="w-32 h-32 mb-8 rounded-full shadow-2xl border-2 border-slate-700 object-cover bg-white">
             
             <!-- Clear Striking Intro -->
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-white drop-shadow-md">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white drop-shadow-lg">
                 Robotics Club of BRAC University
             </h1>
-            <p class="text-xl md:text-2xl font-light italic mb-8 text-slate-300">
+            
+            <!-- The Added Missing Intro Line -->
+            <p class="text-xl md:text-2xl font-medium italic mb-4 text-blue-400 drop-shadow-md">
+                "Achieve your imagination through your robot"—the vision of the high-functioning sociopaths of ROBU!
+            </p>
+
+            <p class="text-lg font-light italic mb-8 text-slate-300">
                 "Small is beautiful, but big is necessary"
             </p>
-            <p class="text-lg text-slate-400 mb-10 max-w-2xl leading-relaxed">
+            
+            <p class="text-lg text-slate-400 mb-12 max-w-2xl leading-relaxed">
                 Evolved from a small laboratory into a national launchpad for deep-tech innovation and global engineering competitiveness.
             </p>
 
             <!-- Navigation / Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                <a href="departments.html" class="px-8 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 transition">Our Departments</a>
-                <a href="about.html" class="px-8 py-3 rounded-lg border border-slate-600 hover:bg-slate-800 transition">About Us</a>
-                <!-- Join Us opens in a new tab -->
-                <a href="https://docs.google.com/forms/your-form-link" target="_blank" rel="noopener noreferrer" class="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 font-bold shadow-lg transition">Join Us</a>
+                <a href="departments.html" class="px-8 py-3 rounded-lg border border-slate-600 hover:bg-slate-700 hover:border-slate-500 transition bg-slate-800/50 backdrop-blur-sm">Our Departments</a>
+                <a href="workshops and milestones" class="px-8 py-3 rounded-lg border border-slate-600 hover:bg-slate-700 hover:border-slate-500 transition bg-slate-800/50 backdrop-blur-sm">About Us</a>
+                
+                <!-- Join Us opens in a new tab to Google Forms -->
+                <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" class="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 font-bold shadow-lg shadow-blue-900/50 transition">Join Us</a>
             </div>
         </div>
     </header>
